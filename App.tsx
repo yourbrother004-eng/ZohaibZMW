@@ -1,5 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
+// Agar file ka naam GitHub par navbar.tsx hai toh ye khud theek ho jayega
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -16,6 +16,13 @@ import Advantage from './components/Advantage';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ThemeToggle from './components/ThemeToggle';
+
+// CSS import ko safe banaya hai
+try {
+  import('./index.css');
+} catch (e) {
+  console.log("CSS load error: ", e);
+}
 
 const App: React.FC = () => {
   const [darkMode, setDarkMode] = useState<boolean>(false);
@@ -50,7 +57,6 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen transition-colors duration-500 bg-white dark:bg-neutral-950 selection:bg-primary selection:text-white overflow-x-hidden relative">
-      {/* Global VIP Ambient Glow */}
       <div className="fixed inset-0 pointer-events-none z-0">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(245,158,11,0.08)_0%,transparent_50%)]"></div>
         <div className="absolute bottom-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_100%,rgba(245,158,11,0.05)_0%,transparent_50%)]"></div>
@@ -75,7 +81,6 @@ const App: React.FC = () => {
       <Footer />
       <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
       
-      {/* WhatsApp Quick Link - VIP Color */}
       <div className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[2000] flex flex-col gap-4">
         <div className="group relative">
           <div className="absolute -inset-1.5 bg-primary rounded-full blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
