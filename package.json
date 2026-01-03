@@ -1,4 +1,3 @@
-
 {
   "name": "zmw-portfolio-vite",
   "private": true,
@@ -6,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -15,6 +14,7 @@
     "@google/genai": "latest"
   },
   "devDependencies": {
+    "@types/node": "^20.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "@vitejs/plugin-react": "^4.3.0",
